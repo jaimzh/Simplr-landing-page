@@ -26,7 +26,7 @@ function Hero() {
               <img
                 alt="Mobile app screenshot showing complexity simplified"
                 className="mx-auto shadow-xl w-[80%] md:w-full rounded-3xl"
-                src="/src/assets/heropic.svg"
+                src="src/assets/heropic.svg"
               />
             </div>
           </motion.div>
