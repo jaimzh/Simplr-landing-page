@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import ExampleComponent from "./ExampleComponent";
 import { motion } from "framer-motion";
+import heropic from '../assets/heropic.svg';
 
 function Hero() {
   return (
@@ -26,7 +27,7 @@ function Hero() {
               <img
                 alt="Mobile app screenshot showing complexity simplified"
                 className="mx-auto shadow-xl w-[80%] md:w-full rounded-3xl"
-                src="src/assets/heropic.svg"
+                src={heropic}
               />
             </div>
           </motion.div>
