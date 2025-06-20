@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import simplrInAction from "../assets/simplrinaction.svg";
 
 function SeeSimplrInAction() {
   return (
@@ -6,11 +7,11 @@ function SeeSimplrInAction() {
       <div className="container wrapper mx-auto flex flex-col justify-center">
         <h3 className="header-text mb-10">See Simplr in Action</h3>
         <div className="flex justify-center">
-            <img src="/src/assets/simplrinaction.svg" alt="see simplr in action" />
+          <img src={simplrInAction} alt="see simplr in action" />
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default SeeSimplrInAction
+export default SeeSimplrInAction;

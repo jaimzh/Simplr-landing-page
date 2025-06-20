@@ -1,4 +1,7 @@
 import React from "react";
+import how1 from "../assets/howitworks1.svg";
+import how2 from "../assets/howitworks2.svg";
+import how3 from "../assets/howitworks3.svg";
 
 function HowItWorks() {
   return (
@@ -11,17 +14,17 @@ function HowItWorks() {
         </p>
         <div className="grid grid-cols-3 gap-6 items-start text-center my-8">
           <img
-            src="/src/assets/howitworks1.svg"
+            src={how1}
             alt="Highlight any text on a webpage"
             className="w-full mx-auto mb-2"
           />
           <img
-            src="/src/assets/howitworks2.svg"
+            src={how2}
             alt="Press Alt+S to simplify or Alt+D to define"
             className="w-full mx-auto mb-2"
           />
           <img
-            src="/src/assets/howitworks3.svg"
+            src={how3}
             alt="Get instant results without leaving the page"
             className="w-full mx-auto mb-2"
           />

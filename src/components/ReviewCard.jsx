@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
 function ReviewCard({
-  profileImg = "/src/assets/profile-placeholder.png",
+  profileImg = "https://via.placeholder.com/56",
   name = "Reviewer Name",
   title = "Verified User",
   review = "This is a sample review. Simplr made everything easier!",

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import chromeIcon from "../assets/chrome-icon.svg";
 
 function Button({
   text,
@@ -7,7 +8,7 @@ function Button({
   shadowColor = "var(--simplr-blue)",
   addShadow = false,
   hasIcon = true,
-  icon = "/src/assets/chrome-icon.svg",
+  icon = chromeIcon,
   onClick,
 }) {
   const [pressed, setPressed] = useState(false);
@@ -69,7 +70,7 @@ Button.defaultProps = {
   color: "blue",
   addShadow: false,
   hasIcon: true,
-  icon: "/src/assets/chrome-icon.svg",
+  icon: chromeIcon,
 };
 
 export default Button;

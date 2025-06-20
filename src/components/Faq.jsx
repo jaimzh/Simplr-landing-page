@@ -1,5 +1,6 @@
 import React from "react";
 import Accordion from "./Accordion";
+import faqIcon from "../assets/faq.svg";
 
 function Faq() {
   const items = [
@@ -20,15 +21,14 @@ function Faq() {
   ];
 
   return (
-    <section id="faqs" className=" scroll-mt-20 py-8 px-6 pb-10 bg-[var(--simplr-faint-blue)] ">
+    <section
+      id="faqs"
+      className=" scroll-mt-20 py-8 px-6 pb-10 bg-[var(--simplr-faint-blue)] "
+    >
       <div className="container wrapper mx-auto flex flex-col justify-center">
         <h3 className="header-text mb-4">FAQs</h3>
         <div className="flex flex-row gap-6 justify-between items-center w-full max-w-5xl mx-auto">
-          <img
-            className="hidden sm:block md:w-[30%]"
-            src="/src/assets/faq.svg"
-            alt="faq"
-          />
+          <img className="hidden sm:block md:w-[30%]" src={faqIcon} alt="faq" />
 
           <div className="flex-col flex w-full">
             <Accordion items={items} />

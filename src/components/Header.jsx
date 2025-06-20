@@ -1,7 +1,7 @@
-import { useState, useRef , useEffect} from "react";
+import { useState, useRef, useEffect } from "react";
 
-import Lenis from '@studio-freight/lenis';
-
+import Lenis from "@studio-freight/lenis";
+import logo from "../assets/logo.svg";
 
 export default function Header() {
   const lenis = useRef(null);
@@ -33,9 +33,8 @@ export default function Header() {
     { label: "How it works", href: "#how-it-works" },
     { label: "Pricing", href: "#pricing" },
     { label: "Reviews", href: "#reviews" },
-     { label: "FAQs", href: "#faqs" },
+    { label: "FAQs", href: "#faqs" },
     { label: "Try Simplr", href: "#try-simplr" },
-   
   ];
 
   // Simple scroll handler for nav links
@@ -55,11 +54,7 @@ export default function Header() {
       <div className="container wrapper mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex">
-          <img
-            src="/src/assets/logo.svg"
-            alt="Simplr Logo"
-            className="h-8 w-auto"
-          />
+          <img src={logo} alt="Simplr Logo" className="h-8 w-auto" />
           <div className="hidden md:block text-xl font-bold text-[var(--simplr-blue)] ml-2">
             Simplr
           </div>
