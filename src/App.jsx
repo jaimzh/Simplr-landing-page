@@ -7,8 +7,8 @@ import HowItWorks from "./components/HowItWorks";
 import SeeSimplrInAction from "./components/SeeSimplrInAction";
 import Reviews from "./components/Reviews";
 import Price from "./components/Price";
-import Faq from "./components/FAQ";
-import CallToAction from "./components/TrySimplr";
+import Faq from "./components/Faq";
+
 import Footer from "./components/Footer";
 import TrySimplr from "./components/TrySimplr";
 
