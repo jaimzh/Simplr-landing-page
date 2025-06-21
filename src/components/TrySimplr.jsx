@@ -9,9 +9,11 @@ function TrySimplr() {
           <h3 className="header-text mb-2 text-[var(--simplr-blue)]">
             Ready to Make Things Simplr?
           </h3>
-          <p className="mb-2 text-[var(--simplr-dark-blue)]">
+          <p className="mb-2  text-[var(--simplr-grey)]">
             Install Simplr now and upgrade your reading experience.
           </p>
+
+          
           <Button
             text="Install Chrome Extension"
             color="white"

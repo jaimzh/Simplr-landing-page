@@ -31,19 +31,18 @@ export default function Header() {
   const navItems = [
     { label: "Benefits", href: "#benefits" },
     { label: "How it works", href: "#how-it-works" },
-    { label: "Pricing", href: "#pricing" },
     { label: "Reviews", href: "#reviews" },
+    { label: "Pricing", href: "#pricing" },
     { label: "FAQs", href: "#faqs" },
     { label: "Try Simplr", href: "#try-simplr" },
   ];
 
-  // Simple scroll handler for nav links
+  // This handles the scrolling to section thingy
   const handleScroll = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      lenis.current.scrollTo(el); // Adjust offset for sticky header
-      // el.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false); // close mobile menu if open
+      lenis.current.scrollTo(el, { offset: -80 }); // Smooth scroll to the section with an offset to equivalent of scroll mt 20
+      setIsOpen(false); // close mobile menu
     }
   };
 
@@ -52,7 +51,6 @@ export default function Header() {
   return (
     <header className="bg-white shadow sticky top-0 z-50">
       <div className="container wrapper mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
         <div className="flex">
           <img src={logo} alt="Simplr Logo" className="h-8 w-auto" />
           <div className="hidden md:block text-xl font-bold text-[var(--simplr-blue)] ml-2">
@@ -68,7 +66,7 @@ export default function Header() {
               href={item.href}
               onClick={(e) => {
                 e.preventDefault();
-                handleScroll(item.label.toLowerCase().replace(/ /g, "-"));
+                handleScroll(item.label.toLowerCase());
               }}
               className="text-[var(--simplr-dark-blue)] hover:text-[var(--simplr-blue)]"
             >
@@ -77,7 +75,7 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Hamburger hamburger animation svg thingy*/}
         <div className="md:hidden">
           <button
             onClick={toggleMenu}

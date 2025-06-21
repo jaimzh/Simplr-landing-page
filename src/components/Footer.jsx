@@ -6,7 +6,6 @@ function Footer() {
   return (
     <footer className="w-full bg-[var(--simplr-blue)] text-white py-12 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-center gap-8 md:gap-0">
-        {/* Left: Logo and tagline */}
         <div className="flex flex-col items-center md:items-start gap-4 min-w-[220px] w-full md:w-auto text-center md:text-left">
           <div className="flex items-center gap-2">
             <span className="text-3xl font-bold">Simplr</span>
@@ -15,10 +14,10 @@ function Footer() {
             Making the web easier to understand, one word at a time.
           </span>
         </div>
-        {/* Center: Github */}
+
         <div className="flex flex-col items-center gap-2 w-full md:w-auto">
           <a
-            href="https://github.com/jaimzdev/simplr"
+            href="https://github.com/jaimzh/Simplr-fe"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-white hover:underline"
@@ -27,7 +26,7 @@ function Footer() {
             <span>Github Repository</span>
           </a>
         </div>
-        {/* Right: Scroll to Top */}
+
         <div className="flex flex-col items-center gap-2 w-full md:w-auto">
           <button
             className="rounded-full bg-white text-[var(--simplr-blue)] w-10 h-10 flex items-center justify-center mb-1 shadow hover:bg-[var(--simplr-blue-dark)] hover:text-white transition"

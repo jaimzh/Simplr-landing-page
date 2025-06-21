@@ -8,11 +8,13 @@ function HowItWorks() {
     <section id="how-it-works" className=" scroll-mt-20 py-8 px-6  pt-0  mb-4">
       <div className="container wrapper mx-auto flex flex-col justify-center">
         <h3 className="header-text mb-4 ">How It Works</h3>
-        <p>
-          Highlight text, press a key, and get instant clarity—right on the
+        <p className="mb-5 p-0 text-left text-[var(--simplr-grey)]">
+          Highlight text, press a key, and get instant clarity, right on the
           page. All in 3 steps
+
+          
         </p>
-        <div className="grid grid-cols-3 gap-6 items-start text-center my-8">
+        <div className="grid grid-cols-3 gap-6 items-start text-center my-6">
           <img
             src={how1}
             alt="Highlight any text on a webpage"

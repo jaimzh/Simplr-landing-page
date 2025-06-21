@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ReviewCard from "./ReviewCard";
 
 function Reviews() {
@@ -25,7 +25,7 @@ function Reviews() {
       review: "“Highly recommended, if I could I’d pay for it!”",
       stars: 5,
     },
-    // Adding more reviews for a smoother, more realistic infinite scroll
+    // Ai generated
     {
       profileImg: "https://placehold.co/100x100/D4A5A5/5C0000?text=MK",
       name: "Maria K.",
@@ -44,24 +44,41 @@ function Reviews() {
     },
   ];
 
-  // --- BEGINNING OF ANIMATION LOGIC ADDITIONS ---
+  // STUFF I ADDED FOR THE ANIMATION AND SCROLLER EFFECTS....Still need to learn more on this in depth
 
   // 1. State to control pause/play of the animation
   const [isPaused, setIsPaused] = useState(false);
+  // 2. State to control if section is in view
+  const [inView, setInView] = useState(false);
 
-  // 2. Ref to connect to the DOM element for hover detection
+  // 3. Ref to connect to the DOM element for hover detection and intersection observer
   const scrollerRef = useRef(null);
+  const sectionRef = useRef(null);
 
-  // 3. Duplicate reviews for the infinite loop effect
-  // This creates a much longer array of reviews: [review1, ..., reviewN, review1, ..., reviewN, review1, ..., reviewN]
+  //  Duplicated the reviews for the infinite loop effect using that spread operator
   const duplicatedReviews = [...reviewData, ...reviewData, ...reviewData];
 
-  // 4. Event handlers for mouse interactions (pause/resume)
+  // 5. Event handlers for mouse interactions (pause/resume)
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
 
-  // 5. Custom CSS for the animation itself (keyframes and pseudo-elements)
-  // This CSS will be dynamically injected into the component.
+  // Using observer to detect if the section is in view so the animation only plays when the section is visible
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  // So we got some custom CSS for the animation and even the fading effect at the edges
   const customCss = `
     /* Define the animation named 'scroll' */
     @keyframes scroll {
@@ -99,14 +116,14 @@ function Reviews() {
 
     .scroller-container::before {
       left: 0; /* Position at the left edge */
-      /* Gradient fading from your section's background color (#F0F8FF) to transparent */
-      background: linear-gradient(to right, #F0F8FF, rgba(240, 248, 255, 0));
+      /* White (#F0F8FF) to transparent gradient */
+      background: linear-gradient(to right, #fff, rgba(255,255,255,0));
     }
 
     .scroller-container::after {
       right: 0; /* Position at the right edge */
       /* Gradient fading from transparent to your section's background color (#F0F8FF) */
-      background: linear-gradient(to left, #F0F8FF, rgba(240, 248, 255, 0));
+      background: linear-gradient(to left, #fff, rgba(255,255,255,0));
     }
 
    
@@ -114,47 +131,43 @@ function Reviews() {
     
   `;
 
-  // --- END OF ANIMATION LOGIC ADDITIONS ---
-
   return (
     <section
+      ref={sectionRef}
       id="reviews"
-      className="scroll-mt-20 py-6 px-6 bg-[#F0F8FF] font-sans" // Use direct hex code or Tailwind config
-      // Inline style to define CSS variables for colors used in components/CSS
+      className="scroll-mt-20 py-6 px-6 bg-white font-sans"
     >
-      {/* 6. Inject the custom CSS into the HTML head */}
+      {/* injecting custom CSS for animation just cuz it said it's dangerous doesn't mean it is , i thinkkkkk */}
       <style dangerouslySetInnerHTML={{ __html: customCss }} />
 
       <div className="container wrapper mx-auto flex flex-col justify-center">
         <h3 className="header-text mb-4">Reviews</h3>
+       
+          <p className="mb-5 text-left  text-[var(--simplr-grey)]   ">
+            Real users, real feedback. See why Simplr is loved by so many.(Most
+            of them weren't paid to say this, we promise)
+          </p>
+       
 
-        {/* 7. This is the main scrolling viewport container */}
+        {/* scrolling container */}
         <div
-          ref={scrollerRef} // Attach the ref here to detect hover
+          ref={scrollerRef} // ref here to detect hover
           className="scroller-container relative w-full overflow-hidden py-4 rounded-xl"
           onMouseEnter={handleMouseEnter} // Calls the function to pause animation
           onMouseLeave={handleMouseLeave} // Calls the function to resume animation
         >
-          {/* 8. This is the inner div that actually moves (the 'track') */}
+          {/* This is the inner div that actually moves (the 'track') */}
           <div
             className={`flex flex-row flex-nowrap w-max ${
-              isPaused ? "paused" : ""
+              isPaused || !inView ? "paused" : ""
             } animate-scroll`}
           >
-            {/* 9. Map over the duplicated reviews to render ReviewCard components */}
-            {/* This replaces your hardcoded ReviewCard instances */}
+            {/* Map over the duplicated reviews to render ReviewCard components */}
+
             {duplicatedReviews.map((review, index) => (
               <ReviewCard key={index} {...review} /> // Each duplicated review is rendered as a card
             ))}
           </div>
-        </div>
-
-        {/* Optional text to guide the user */}
-        <div className="mt-8 p-4 text-center text-gray-600 max-w-2xl mx-auto">
-          <p>
-            Hover over the reviews to pause the scrolling animation and read
-            them carefully. Move your mouse away to resume the seamless loop.
-          </p>
         </div>
       </div>
     </section>

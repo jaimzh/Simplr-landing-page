@@ -3,14 +3,13 @@ import PriceCard from "./PriceCard";
 
 function Price() {
   return (
-    <section id="pricing" className="py-8 px-6 bg-white mb-4">
+    <section id="pricing" className="py-8 px-6 bg-[var(--simplr-light-blue)] mb-4">
       <div className="container wrapper mx-auto flex flex-col justify-center">
         <h3 className="header-text mb-4">Plans & Pricing </h3>
-        <p className=" mb-8 ">
-          Highlight text, press a key, and get instant clarity—right on the
-          page. All in 3 steps
+        <p className="mb-2 text-[var(--simplr-grey]">
+          Yes, it’s all free. We  just really wanted a pricing table.
         </p >
-        <div className="flex flex-col md:flex-row gap-8 md:gap-2 items-center justify-center">
+        <div className="mt-8 flex flex-col md:flex-row gap-8 md:gap-2 items-center justify-center">
           <PriceCard
             type="Basic"
             price="$0"

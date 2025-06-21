@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 function ReviewCard({
   profileImg = "https://via.placeholder.com/56",
   name = "Reviewer Name",
@@ -12,9 +11,7 @@ function ReviewCard({
   return (
     <div className="mx-2 flex justify-center items-center flex-shrink-0 scale-90 sm:scale-100">
       <div className="bg-white border-2 border-[var(--simplr-blue)] rounded-2xl p-4 m-0 flex flex-col justify-center gap-4 h-[200px] max-w-[367px] max-h-[300px]  mx-auto">
-        {/* Top Row: Profile + Name/Title + Stars */}
         <div className="flex items-center justify-between gap-4">
-          {/* Profile and Name/Title */}
           <div className="flex items-center gap-4">
             <img
               src={profileImg}
@@ -42,7 +39,7 @@ function ReviewCard({
             </svg>
           ))}
         </div>
-        {/* Review Text */}
+
         <div className="text-[var(--simplr-dark-blue)] text-base text-left">
           {review}
         </div>

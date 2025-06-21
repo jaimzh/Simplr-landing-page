@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 import tickIcon from "../assets/tick.svg";
 import Button from "./Button";
 
@@ -12,7 +13,14 @@ function PriceCard({
   onButtonClick,
 }) {
   return (
-    <div className="bg-white rounded-2xl border-2 border-[var(--simplr-blue)]  flex flex-col items-center p-8 min-w-[280px] mx-auto shadow-[0px_5px_0px_var(--simplr-blue)]">
+    <motion.div
+      whileHover={{
+        scale: 1.02,
+        boxShadow: "0px 8px 24px rgba(73,148,236,0.12)",
+      }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className="bg-white rounded-2xl border-2 border-[var(--simplr-blue)]  flex flex-col items-center p-8 min-w-[280px] mx-auto shadow-[0px_5px_0px_var(--simplr-blue)]"
+    >
       <h3 className="self-start text-2xl font-bold text-[var(--simplr-blue)] mb-2">
         {type}
       </h3>
@@ -37,7 +45,7 @@ function PriceCard({
         hasIcon={false}
         onClick={onButtonClick}
       />
-    </div>
+    </motion.div>
   );
 }
 PriceCard.propTypes = {

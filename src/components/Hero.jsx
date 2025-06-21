@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "./Button";
-import ExampleComponent from "./ExampleComponent";
 import { motion } from "framer-motion";
 import heropic from '../assets/heropic.svg';
 
