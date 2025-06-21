@@ -25,7 +25,7 @@ function Hero() {
             className="w-full md:w-[48%] mb-4 md:mb-0 flex-shrink-0 items-center flex justify-center"
           >
             <img
-              src="/heropic.svg"
+              src="/heropic.jpg"
               alt="Hero"
               className="w-[80%] md:w-full rounded-3xl h-auto mx-auto"
               loading="eager"
