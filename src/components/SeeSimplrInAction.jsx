@@ -1,5 +1,6 @@
 import React from "react";
-import simplrInAction from "../assets/simplrinaction.svg";
+// import simplrInAction from "../assets/simplrinaction.svg";
+import simplrInAction from "../assets/Frame 50.jpg";
 
 function SeeSimplrInAction() {
   return (
@@ -10,7 +11,7 @@ function SeeSimplrInAction() {
          Real world screenshots of how Simplr simplfies and defines text.
         </p>
         <div className="flex justify-center mt-8">
-          <img src={simplrInAction} alt="see simplr in action" />
+          <img  className="rounded-2xl" src={simplrInAction} alt="see simplr in action" />
         </div>
       </div>
     </section>
