@@ -11,7 +11,7 @@ function Reviews() {
       stars: 5,
     },
     {
-      profileImg: "https://placehold.co/100x100/FFC8DD/FF0077?text=PR",
+      profileImg: "https://placehold.co/100x100/FFC8DD/FF0077?text=PM",
       name: "Definitely Real Person",
       title: "Product Manager",
       review:
@@ -19,25 +19,25 @@ function Reviews() {
       stars: 5,
     },
     {
-      profileImg: "https://placehold.co/100x100/ADD8E6/00008B?text=AU",
-      name: "Anonymous User",
+      profileImg: "https://placehold.co/100x100/212121/FAFAFA?text=J",
+      name: "Jin Woo",
       title: "S Class Hunter",
-      review: "“Highly recommended, if I could I’d pay for it!”",
+      review: "“Highly recommended. Efficiency, leveled up! ”",
       stars: 5,
     },
-    // Ai generated
+    
     {
       profileImg: "https://placehold.co/100x100/D4A5A5/5C0000?text=MK",
       name: "Maria K.",
       title: "Marketing Specialist",
       review:
-        "“Simplr saved us hours on manual tasks. A game-changer for productivity!”",
+        "“Simplr is so good, it's criminal that it's free. Honestly, i wish they had a 'take my money' button”",
       stars: 5,
     },
     {
-      profileImg: "https://placehold.co/100x100/B0E0E6/004080?text=LT",
-      name: "Leon T.",
-      title: "Freelance Designer",
+      profileImg: "https://placehold.co/100x100/B0E0E6/004080?text=M",
+      name: "Mufasa",
+      title: "Chief Hype Officer",
       review:
         "“Incredibly intuitive and powerful. Simplr is now essential to my workflow.”",
       stars: 4,
@@ -46,19 +46,19 @@ function Reviews() {
 
   // STUFF I ADDED FOR THE ANIMATION AND SCROLLER EFFECTS....Still need to learn more on this in depth
 
-  // 1. State to control pause/play of the animation
+  // State to control pause/play of the animation
   const [isPaused, setIsPaused] = useState(false);
-  // 2. State to control if section is in view
+  // State to control if section is in view
   const [inView, setInView] = useState(false);
 
-  // 3. Ref to connect to the DOM element for hover detection and intersection observer
+  // Ref that connects to the DOM element for hover detection and intersection observer
   const scrollerRef = useRef(null);
   const sectionRef = useRef(null);
 
   //  Duplicated the reviews for the infinite loop effect using that spread operator
   const duplicatedReviews = [...reviewData, ...reviewData, ...reviewData];
 
-  // 5. Event handlers for mouse interactions (pause/resume)
+  //  Event handlers for mouse interactions (pause/resume)
   const handleMouseEnter = () => setIsPaused(true);
   const handleMouseLeave = () => setIsPaused(false);
 

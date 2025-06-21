@@ -49,6 +49,6 @@ public/
 ```
 
 
-## 📄 License
+## 📄 Extra Notes
 
-MIT
+> Had to use eager loading and preloading to ensure the hero image loads before all the elements, just so we can get that smooth framer motion animation to show up  

@@ -1,11 +1,11 @@
 import React from "react";
-
 import githubIcon from "../assets/githubicon.svg";
 
 function Footer() {
   return (
     <footer className="w-full bg-[var(--simplr-blue)] text-white py-12 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-center gap-8 md:gap-0">
+        {/* Left: Logo and tagline */}
         <div className="flex flex-col items-center md:items-start gap-4 min-w-[220px] w-full md:w-auto text-center md:text-left">
           <div className="flex items-center gap-2">
             <span className="text-3xl font-bold">Simplr</span>
@@ -15,6 +15,7 @@ function Footer() {
           </span>
         </div>
 
+        {/* Center: Github */}
         <div className="flex flex-col items-center gap-2 w-full md:w-auto">
           <a
             href="https://github.com/jaimzh/Simplr-fe"
@@ -27,9 +28,10 @@ function Footer() {
           </a>
         </div>
 
+        {/* Right: Scroll to Top */}
         <div className="flex flex-col items-center gap-2 w-full md:w-auto">
           <button
-            className=" cursor-pointer rounded-full bg-white text-[var(--simplr-blue)] w-10 h-10 flex items-center justify-center mb-1 shadow hover:bg-[var(--simplr-blue-dark)] hover:text-white transition"
+            className="cursor-pointer rounded-full bg-white text-[var(--simplr-blue)] w-10 h-10 flex items-center justify-center mb-1 shadow hover:bg-[var(--simplr-blue-dark)] hover:text-white transition"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label="Scroll to Top"
           >
@@ -48,13 +50,28 @@ function Footer() {
               />
             </svg>
           </button>
-          <a
-            href="#privacy-policy"
-            className="text-xs text-white underline hover:text-gray-200"
-          >
-            Privacy Policy
-          </a>
+          <span>Scroll to Top</span>
         </div>
+      </div>
+      
+
+      
+
+
+      <div className=" flex flex-col items-center mt-10 gap-3 text-center">
+        
+        <span>Made by Jaimz🦖</span>
+        <span>© 2023 Simplr. All Rights Reserved.</span>
+      </div>
+      <div className="mt-2 text-center text-sm">
+        <a
+          href="https://humdrum-crowd-d32.notion.site/Simplr-Chrome-Extension-Privacy-Policy-2093e3d10d3280da9d49f33456547f18"
+          className="underline hover:text-[var(--simplr-light-blue)] transition-colors"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Privacy Policy
+        </a>
       </div>
     </footer>
   );
