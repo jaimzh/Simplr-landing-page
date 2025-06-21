@@ -2,6 +2,8 @@ import React from "react";
 import Button from "./Button";
 import { motion } from "framer-motion";
 import heropic from '../assets/heropic.svg';
+import heropicjpg from '../assets/heropic.jpg'; 
+import heropicwebp from '../assets/heropic.webp';
 
 function Hero() {
   return (
@@ -20,15 +22,9 @@ function Hero() {
               damping: 10,
               duration: 0.5,
             }}
-            className="w-full md:w-[48%] mb-4 md:mb-0 flex-shrink-0"
+            className="w-full md:w-[48%] mb-4 md:mb-0 flex-shrink-0 flex justify-center"
           >
-            <div>
-              <img
-                alt="Mobile app screenshot showing complexity simplified"
-                className="mx-auto shadow-xl w-[80%] md:w-full rounded-3xl"
-                src={heropic}
-              />
-            </div>
+            <img src={heropicjpg} alt="Hero" className="w-[80%] md:w-full rounded-3xl h-auto" />
           </motion.div>
 
           {/* text stuff  */}

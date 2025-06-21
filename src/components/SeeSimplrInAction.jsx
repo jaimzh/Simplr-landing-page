@@ -13,6 +13,8 @@ function SeeSimplrInAction() {
         <div className="flex justify-center mt-8">
           <img  className="rounded-2xl" src={simplrInAction} alt="see simplr in action" />
         </div>
+
+        <picture></picture>
       </div>
     </section>
   );
