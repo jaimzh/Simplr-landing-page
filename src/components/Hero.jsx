@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "./Button";
 import { motion } from "framer-motion";
-import heropic from '../assets/heropic.svg';
-import heropicjpg from '../assets/heropic.jpg'; 
-import heropicwebp from '../assets/heropic.webp';
+import heropic from "../assets/heropic.svg";
+import heropicjpg from "../assets/heropic.jpg";
+import heropicwebp from "../assets/heropic.webp";
 
 function Hero() {
   return (
@@ -24,7 +24,11 @@ function Hero() {
             }}
             className="w-full md:w-[48%] mb-4 md:mb-0 flex-shrink-0 flex justify-center"
           >
-            <img src={heropicjpg} alt="Hero" className="w-[80%] md:w-full rounded-3xl h-auto" />
+            <img
+              src={heropicjpg}
+              alt="Hero"
+              className="w-[80%] md:w-full h-auto"
+            />
           </motion.div>
 
           {/* text stuff  */}
@@ -76,7 +80,7 @@ function Hero() {
               <Button
                 text="Install Chrome Extension"
                 color="blue"
-                shadowColor= "var(--simplr-dark-blue)"
+                shadowColor="var(--simplr-dark-blue)"
                 addShadow={true}
               />
             </motion.div>
