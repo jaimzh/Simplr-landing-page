@@ -42,6 +42,8 @@ export default function Header() {
     const el = document.getElementById(id);
     if (el) {
       lenis.current.scrollTo(el, { offset: -80 }); // Smooth scroll to the section with an offset to equivalent of scroll mt 20
+      // el.scrollIntoView({ behavior: "smooth" }); html smooth equivalent for reference
+
       setIsOpen(false); // close mobile menu
     }
   };

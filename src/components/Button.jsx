@@ -13,12 +13,13 @@ function Button({
 }) {
   const [pressed, setPressed] = useState(false);
 
-  const base = "px-6 py-4 rounded-full font-semibold transition duration-200 ";
+  const base =
+    "px-6 py-4 rounded-full font-semibold transition duration-200 cursor-pointer  ";
   const colors = {
     blue: "bg-[var(--simplr-blue)] hover:bg-[var(--simplr-blue-dark)] text-white",
     red: "bg-red-600 hover:bg-red-700 ",
     white:
-      "bg-white hover:bg-[var(--simplr-blue)] hover:outline text-[var(--simplr-blue)]  hover:text-white ",
+      "bg-white text-[var(--simplr-blue)] hover:bg-[var(--simplr-light-blue)] hover:outline hover:outline-2 hover:outline-[var(--simplr-blue)] ",
   };
 
   // Inline style for cartoon shadow
@@ -48,8 +49,8 @@ function Button({
       onMouseLeave={() => setPressed(false)}
       onClick={handleClick}
     >
-      <div className="flex flex-row gap-2 items-center justify-center">
-        {hasIcon && <img src={icon} alt="icon" className="w-5 h-5" />}
+      <div className="flex flex-row gap-2 items-center justify-center ">
+        {hasIcon && <img src={icon} alt="icon" className="w-5 h-5 " />}
         <p>{text}</p>
       </div>
     </button>

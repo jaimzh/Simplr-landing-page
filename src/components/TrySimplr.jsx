@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import chrome from "../assets/chrome-blue.svg"; 
 
 function TrySimplr() {
   return (
@@ -18,6 +19,7 @@ function TrySimplr() {
             text="Install Chrome Extension"
             color="white"
             addShadow={true}
+            icon={chrome}
           />
         </div>
       </div>

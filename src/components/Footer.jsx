@@ -29,7 +29,7 @@ function Footer() {
 
         <div className="flex flex-col items-center gap-2 w-full md:w-auto">
           <button
-            className="rounded-full bg-white text-[var(--simplr-blue)] w-10 h-10 flex items-center justify-center mb-1 shadow hover:bg-[var(--simplr-blue-dark)] hover:text-white transition"
+            className=" cursor-pointer rounded-full bg-white text-[var(--simplr-blue)] w-10 h-10 flex items-center justify-center mb-1 shadow hover:bg-[var(--simplr-blue-dark)] hover:text-white transition"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label="Scroll to Top"
           >

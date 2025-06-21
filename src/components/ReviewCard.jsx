@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import fallbackImg from "../assets/profile-avatar.svg"; // Your fallback image
 
 function ReviewCard({
   profileImg = "https://via.placeholder.com/56",
@@ -16,6 +17,10 @@ function ReviewCard({
             <img
               src={profileImg}
               alt={name}
+              onError={(e) => {
+                e.target.onerror = null; // Prevents infinite loop if fallback also fails
+                e.target.src = fallbackImg;
+              }}
               className="w-14 h-14 rounded-full border-2 border-[var(--simplr-blue)] object-cover"
             />
             <div className="flex flex-col">
