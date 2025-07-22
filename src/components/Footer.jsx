@@ -61,7 +61,7 @@ function Footer() {
       <div className=" flex flex-col items-center mt-10 gap-3 text-center">
         
         <span>Made by Jaimz🦖</span>
-        <span>© 2023 Simplr. All Rights Reserved.</span>
+        <span>© 2025 Simplr. All Rights Reserved.</span>
       </div>
       <div className="mt-2 text-center text-sm">
         <a
